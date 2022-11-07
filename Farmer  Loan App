@@ -1,0 +1,56 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+	    Farmer dispEligCritria;
+	    Farmer f1 = new Farmer();
+	    Farmer f2 = new Farmer();
+	    Farmer f3 = new Farmer();
+	    
+	    f1.accpectInput();
+	    f1.compute();
+	    f1.dispIntrest();
+	    
+	    f2.accpectInput();
+	    f2.compute();
+	    f2.dispIntrest();
+	    
+	    
+	    f3.accpectInput();
+	    f3.compute();
+	    f3.dispIntrest();
+	    
+	    
+		
+	}
+}
+class Farmer
+{
+    private float p;
+    private float t;
+    static float r;
+    private float si;
+    
+    void accpectInput()
+    {
+        Scanner scan =new Scanner(System.in);
+        System.out.println("Enter the principle Amount");
+        p=scan.nextFloat();
+         System.out.println("Enter the time duration");
+        t=scan.nextFloat();
+        
+    }
+    void compute()
+    {
+        si=(p*t*r)/100;
+    }
+    void dispIntrest()
+    {
+        System.out.println(si);
+    }
+    static void dispEligCritria()
+    {System.out.println("The age must be between 18yrs to 70yrs ");
+        
+    }
+}
