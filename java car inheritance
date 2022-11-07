@@ -1,0 +1,97 @@
+
+public class Main
+{
+	public static void main(String[] args)
+	{
+	Maruthi800 m = new Maruthi800();
+	Innova i    = new Innova();
+	Ferrari f = new Ferrari();
+	
+	m.start();
+	m.acclerate();
+	m.drive();
+	m.comburstion();
+	m.stop();
+	System.out.println();
+	i.start();
+	i.acclerate();
+	i.drive();
+	i.comburstion();
+	i.stop();
+	System.out.println();
+	
+	f.start();
+	f.acclerate();
+	f.drive();
+	f.comburstion();
+	f.stop();
+	}
+	
+}
+class Car
+{
+    void start()
+    {
+        System.out.println("car is starting");
+    }
+    void acclerate()
+    {
+         System.out.println("car is acclerating");
+    }
+    void drive()
+    {
+         System.out.println("car is driving");
+    }
+    void stop()
+    {
+         System.out.println("car is stoping");
+    }
+    
+}
+class Maruthi800 extends Car
+{
+    void acclerate()
+    {
+         System.out.println("Maruthi800 car is acclerating at maximum speed of 140km/hr");
+    }
+    void drive()
+    {
+         System.out.println("Maruthi800 car is driving with shifting gears");
+    }
+    
+    void comburstion()
+    {
+         System.out.println("Maruthi800 car is a petrol engine");
+    }
+}
+class Innova extends Car
+{
+    void acclerate()
+    {
+         System.out.println("Innova car is acclerating at maximum speed of 240km/hr");
+    }
+    void drive()
+    {
+         System.out.println("Innova car is driving with automatic gears");
+    }
+    void comburstion()
+    {
+         System.out.println("Innova car is a diesel engine");
+    }
+}
+class Ferrari extends Car
+{
+    void acclerate()
+    {
+         System.out.println("Ferrari car is acclerating at maximum speed of 350km/hr");
+    }
+    void drive()
+    {
+         System.out.println("Ferrari car is driving with Turbo engines");
+    }
+    void comburstion()
+    {
+         System.out.println("Ferrari car is a white petrol engine");
+    }
+}
+
