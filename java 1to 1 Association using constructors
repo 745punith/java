@@ -1,0 +1,66 @@
+ public class Main
+{
+	public static void main(String[] args) {
+		Account a = new Account(1212,"savings","punith");
+		Employee emp = new Employee(12,"punith","banglore",a);
+		emp.disp();
+	}
+}
+class Account
+{
+    private int Acc_No;
+    private String Acc_type;
+    private String Acc_Name;
+    
+    public Account (int Acc_No,String Acc_type,String Acc_Name)
+    {
+        this.Acc_No = Acc_No;
+        this.Acc_type = Acc_type;
+        this.Acc_Name = Acc_Name;
+    }
+    public int getAcc_no()
+    {
+        return Acc_No;
+    }
+    public String getAcc_type()
+    {
+        return Acc_type;
+    }
+    public String getAcc_Name()
+    {
+        return Acc_Name;
+    }
+}
+class Employee
+{
+    private int emp_id;
+    private String emp_Name;
+    private String emp_Address;
+    
+    private Account acc;
+    
+    public Employee (int emp_id,String emp_Name,String emp_Address,Account acc)
+    {
+        this.emp_id = emp_id;
+        this.emp_Name = emp_Name;
+        this.emp_Address = emp_Address;
+        this.acc= acc;
+        
+        
+    }
+    void disp()
+    {
+        System.out.println("emp_id :"+emp_id);
+         System.out.println("emp_Name :"+emp_Name);
+         System.out.println("emp_Address :"+emp_Address);
+         System.out.println();
+          System.out.println("Acc_No :"+ acc.getAcc_no());
+           System.out.println("Acc_type :"+ acc.getAcc_type());
+            System.out.println("Acc_Name:"+ acc.getAcc_Name());
+        
+        
+        
+        
+        
+    }
+}
