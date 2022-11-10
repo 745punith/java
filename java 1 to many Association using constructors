@@ -1,0 +1,71 @@
+public class Main
+{
+	public static void main(String[] args)
+	{
+	    Employee emp1 = new Employee(18,"puneeth");
+	    Employee emp2 = new Employee(23,"maddy");
+	    Employee emp3 =new Employee(44,"virat");
+	    
+	    Employee [] e =new Employee[3];
+	    e[0]=emp1;
+	    e[1]=emp2;
+	    e[2]=emp3;
+	    Department dept= new Department(12,"BCCI","Dubai",e);
+	    dept.disp();
+	    
+	}
+
+}
+class Employee
+{
+    private int emp_id;
+    private String emp_name;
+    
+    public Employee(int emp_id,String emp_name)
+    {
+        this.emp_id=emp_id;
+        this.emp_name=emp_name;
+    }
+    public int getemp_id()
+    {
+        return emp_id;
+    }
+    public String getemp_name()
+    {
+        return emp_name;
+    }
+}
+
+class Department
+{
+    //instance 
+    private int dept_id;
+    private String dept_name;
+    private String dept_location;
+    
+    private Employee[] employes;
+    public Department(int dept_id,String dept_name,String dept_location,Employee[] employes)
+    {
+        this.dept_id=dept_id;
+        this.dept_name=dept_name;
+        this.dept_location=dept_location;
+        this.employes=employes;
+        
+    }
+    public void disp()
+    {
+        System.out.println("Department details");
+         System.out.println("dept_id:"+dept_id);
+          System.out.println("dept_name:"+dept_name);
+           System.out.println("dept_location:"+dept_location);
+           for(Employee elem:employes)
+           {
+               System.out.println();
+                System.out.println("emp_id:"+elem.getemp_id());
+                 System.out.println("emp_name:"+elem.getemp_name());
+                 System.out.println();
+           }
+        
+        
+    }
+}
