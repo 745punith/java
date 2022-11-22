@@ -1,0 +1,90 @@
+import java.util.Scanner;
+
+
+ class InvalidCustomerException extends Exception
+{
+	public String getmessage()
+	{
+		return("Invalid input,Try again!");
+	}
+
+}
+class ATM
+{
+	private int acc_num=1432;
+	private int ps_wrd=1221;
+	int ac;
+	int pw;
+	
+	public void acceptInput()
+	{
+		Scanner scan =new Scanner(System.in);
+		System.out.println("Enter the Account number:");
+		ac=scan.nextInt();
+		System.out.println("Enter the password:");
+		pw=scan.nextInt();
+		
+	}
+	
+	public void Verify()throws Exception
+	{
+		if(ac==acc_num && pw==ps_wrd)
+		{
+			System.out.println("collect your money");	
+		}
+		else
+		{
+			InvalidCustomerException ice=new InvalidCustomerException(); 
+			System.out.println(ice.getmessage());
+			throw ice;
+		}
+		
+	}
+	
+}
+class Bank
+{
+	public void initiate()
+	{
+	ATM atm=new ATM();
+	
+	try
+	{
+		atm.acceptInput();
+		atm.Verify();
+	}
+	catch(Exception e)
+	{
+		try
+		{
+			atm.acceptInput();
+		     atm.Verify();
+	}
+	catch(Exception f)
+	{
+		try
+		{
+		atm.acceptInput();
+		atm.Verify();
+	}
+	catch(Exception g)
+		{
+		System.out.println("card blocked");
+		System.exit(0);
+		}
+	}
+		
+		}
+	}
+	
+}
+public class Main
+{
+	public static void main(String[] args) {
+			Bank b= new Bank();
+		b.initiate();
+	}
+}
+
+
+
