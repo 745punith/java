@@ -1,0 +1,99 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		MSword w1 =new MSword();
+		MSword w2= new MSword();
+		MSword w3 =new MSword();
+		
+		
+		w1.setName("TYPE");
+		w2.setName("SPELL");
+		w3.setName("SAVE");
+		
+		w2.setDaemon(true);
+		w3.setDaemon(true);
+		
+		 w2.setPriority(4);
+        w3.setPriority(3);
+
+		
+		
+		w1.start();
+		w2.start();
+		w3.start();
+		
+		
+	}
+}
+class MSword extends Thread
+{
+    public void run()
+    {
+        Thread t=Thread.currentThread();
+        String name=t.getName();
+        if(name.equals("TYPE"))
+        {
+            typing();
+        
+        }
+        
+        else if(name.equals("SPELL"))
+        {
+            spellchecking();
+        }
+        else
+        {
+            Autosaving();
+            
+        }
+}
+public void typing()
+{
+     try {
+		for(int i=1; i<=5; i++)
+		{
+		   System.out.println("Typing..."); 
+		   Thread.sleep(3000);
+		}
+		
+		
+	}
+	catch(Exception e) {
+	    System.out.println("typing interputed");
+	   }
+}
+public void spellchecking()
+{
+     try{
+		for(;;)
+		{
+		  System.out.println("spell checking...");  
+		  Thread.sleep(3000);
+		}
+	    }
+	    catch(Exception e)
+	    {
+	        System.out.println("spellchecking intreputed");
+	    }
+}
+public void Autosaving()
+{
+    try{
+        for(;;)
+        {
+            System.out.println("Autosaving...");
+            Thread.sleep(3000);
+            
+        }
+        
+		
+	}
+	catch(Exception e)
+	{
+	   System.out.println("autosaving interputed"); 
+	}
+}
+}
+
+
